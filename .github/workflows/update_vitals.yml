@@ -31,7 +31,7 @@ jobs:
           sed -i 's/vitals-testing/${{ github.event.repository.name }}/g' vitals.yaml
           git config --global user.email "pradeep@pradeep.com"
           git config --global user.name "Your Name"
-          git commit -am "Automated report"
+          git commit -am "Automated report" || echo "nothing to commit"
           git push 
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
